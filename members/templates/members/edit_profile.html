@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Profile</title>
+{% endblock %}
+
+{% block body %}
+<div class="container ml-4">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <a type="button" class="btn btn-link" href="{% url 'members:change_password' %}">Change Password</a>
+</div>
+
+{% endblock %}
